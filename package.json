@@ -2,15 +2,18 @@
   "name": "discord_bot_pokehint_to_js",
   "version": "1.0.0",
   "dependencies": {
-    "discord.js": "^14.6.0"
+    "@discordjs/rest": "^1.3.0",
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3"
   },
-  "main": "main.js",
-  "devDependencies": {},
+  "main": "src/main.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node ."
   },
   "keywords": [],
-  "author": "",
+  "author": "TerroFlys",
   "license": "ISC",
-  "description": ""
+  "description": "A bot to give players the pokemon names for the popular discord bot PokeTwo"
 }
