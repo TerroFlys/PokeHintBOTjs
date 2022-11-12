@@ -1,4 +1,4 @@
-import {ActivityFlagsBitField, Client, Events, GatewayIntentBits} from "discord.js";
+import {ActivityFlagsBitField, Client, GatewayIntentBits} from "discord.js";
 import {onPokeTwoMSG} from "./events/onPokeTwoMSG.js";
 import {onBotMessage} from "./events/onBotMessage.js";
 
@@ -10,17 +10,13 @@ client.on('ready', () => {
     client.user.setActivity(ActivityFlagsBitField.Flags.SPECTATE)
 });
 
-const pokeTwoID = 716390085896962058
+const pokeTwoID = '716390085896962058'
 const pokeTwoHintMsg = "The pokémon is"
 
 client.on("messageCreate",(msg) => {
-    if (msg.author.id === pokeTwoID && msg.content.includes(pokeTwoHintMsg)) onPokeTwoMSG(msg);
+    if (msg.author.id === pokeTwoID && msg.content.startsWith(pokeTwoHintMsg)) onPokeTwoMSG(msg);
     if (msg.author.id !== pokeTwoID && msg.content.startsWith("tb!")) onBotMessage(msg) ;
 });
 
-// client.on(Events.InteractionCreate, (interaction) => {
-//     console.log(interaction)
-// } )
 
-
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN).then(() => console.log("Bot logged in promise"));
