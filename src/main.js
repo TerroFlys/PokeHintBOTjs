@@ -1,10 +1,13 @@
-import { ActivityFlagsBitField, Client, GatewayIntentBits } from "discord.js";
+import { ActivityFlagsBitField, Client, GatewayIntentBits, Partials } from "discord.js";
 import { onPokeTwoMSG } from "./events/onPokeTwoMSG.js";
 import { onBotMessage } from "./events/onBotMessage.js";
 
 const BOT_VERSION = "1.0"
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.DirectMessages] });
+const client = new Client({
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.DirectMessages],
+  partials: [Partials.Message, Partials.Channel, Partials.Reaction]
+});
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
