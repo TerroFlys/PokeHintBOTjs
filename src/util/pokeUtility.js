@@ -3,20 +3,20 @@ const pokemons = ["Polteageist", "Unown", "Infernape", "Azelf", "Machoke", "Remo
 
 
 export function pokeUtility(hint) {
-    const found = findPokemon(hint)
-    if (found === undefined || found.length <= 0) return "Could not find a match :(";
-    let result = "Pokemon is most likely the following: ";
-    found.forEach((el) => {
-        result += "\n" + el
-    })
+  const found = findPokemon(hint)
+  if (found === undefined || found.length <= 0) return "Could not find a match :(";
+  let result = "Pokemon is most likely (one of) the following: ";
+  found.forEach((el) => {
+    result += "\n" + el
+  })
 
-    return result;
+  return result;
 }
 
 function findPokemon(hint) {
-    // was using the \ symbol
-    const betterHint = hint.join(" ").replaceAll(".", "").replaceAll("_", ".").trim().replaceAll("\\", "")
+  // was using the \ symbol
+  const betterHint = hint.join(" ").replaceAll(".", "").replaceAll("_", ".").trim().replaceAll("\\", "")
 
-    const re = new RegExp("\\b" + betterHint + "\\b", 'gi')
-    return pokemons.filter((el) => el.match(re))
+  const re = new RegExp("\\b" + betterHint + "\\b", 'gi')
+  return pokemons.filter((el) => el.match(re))
 }
