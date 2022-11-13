@@ -3,7 +3,7 @@ import {onPokeTwoMSG} from "./events/onPokeTwoMSG.js";
 import {onBotMessage} from "./events/onBotMessage.js";
 
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.DirectMessages] });
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
