@@ -1,6 +1,7 @@
 import { pokeUtility } from "../util/pokeUtility.js";
 
 export function onBotMessage(msg) {
+  console.log(`Chat Interaction with user: ${msg.author.tag}`)
   const parts = msg.content.split(" ");
   if (parts.length === 1) {
     msg.channel.send("Type `tb! help` for more info")

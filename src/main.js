@@ -55,6 +55,7 @@ client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
   if (interaction.commandName === 'hint') {
+    console.log(`Command Interaction with user: ${interaction.user.tag}`)
     await interaction.reply('Please continue using `tb! hint` instead of this!');
   }
 });
