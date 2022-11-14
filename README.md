@@ -1,6 +1,5 @@
 # PokeHint BOTjs
 
----
 
 > I made this bot first in Java and now I remade it in JavaScript, using discord.js.
 > This bot reveals the answers from poketwo from seeing the hint.
