@@ -3,7 +3,7 @@ import { pokeUtility } from "../util/pokeUtility.js";
 export function onBotMessage(msg) {
   const parts = msg.content.split(" ");
   if (parts.length === 1) {
-    msg.channel.send("Type 'tb! help' for more info")
+    msg.channel.send("Type `tb! help` for more info")
     return
   }
   if (parts[1].includes("help")) {
